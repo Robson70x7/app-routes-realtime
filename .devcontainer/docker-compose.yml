@@ -1,0 +1,26 @@
+services:
+  nestapi:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    networks:
+      - app_network
+    volumes:
+      - ../:/home/node/nestjs-api:cached
+    command: ["tail", "-f", "/dev/null"]
+
+  db:
+    build:
+      context: ../
+      dockerfile: .docker/mongodb/Dockerfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports: 
+      - 27017:27017
+    networks:
+      - app_network
+
+networks:
+  app_network:

@@ -1,0 +1,27 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "App FC Roras e Rastreio",
+	"dockerComposeFile": [
+		"./docker-compose.yml"
+	],
+	"service": "nestapi",
+	"remoteUser": "node",
+	"features": {
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+		"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {}
+	},
+	"shutdownAction": "stopCompose",
+	"workspaceFolder": "/home/node/nestjs-api",
+	"forwardPorts": [3000],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"mongodb.mongodb-vscode",
+				"humao.rest-client",
+				"Prisma.prisma"
+			]
+		}
+	}
+}
