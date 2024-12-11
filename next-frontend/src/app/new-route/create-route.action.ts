@@ -1,4 +1,7 @@
 "use server";
+
+import { revalidateTag } from "next/cache";
+
 //import { revalidateTag } from "next/cache";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,6 +44,7 @@ export async function createRouteAction(state: any, formData: FormData) {
   if (!response.ok) {
     return { error: "Falha ao criar rota" };
   }
-
+  revalidateTag("routes");
+  
   return { success: true };
 }

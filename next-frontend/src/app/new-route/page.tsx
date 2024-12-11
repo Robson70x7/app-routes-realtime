@@ -1,3 +1,4 @@
+import { MapNewRoute } from "./MapNewRoute";
 import { NewRouteForm } from "./NewRouteForm";
 
 export async function serachDirections(source: string, destination: string) {
@@ -43,12 +44,10 @@ export async function serachDirections(source: string, destination: string) {
   );
 
   if (!directionResponse.ok) {
-    console.log(await directionResponse.text());
     throw new Error("Falha para carregar direções");
   }
 
   const directionData = await directionResponse.json();
-  console.log(directionData, sourceData, destinationData);
   return {
     directionData,
     sourcePlaceId,
@@ -165,7 +164,7 @@ export async function NewRoutePage({
           </div>
         )}
       </div>
-      <div>mapa</div>
+      <MapNewRoute directionsData={directionsData}/>
     </div>
   );
 }
