@@ -19,7 +19,7 @@ export function MapNewRoute(props: MapNewRouteProps) {
       return;
     }
 
-    //map.removeAllRoutes();
+    map.removeAllRoutes();
     map.addRouteWithIcons({
       routeId: "1",
       startMarkerOptions: {
@@ -34,5 +34,5 @@ export function MapNewRoute(props: MapNewRouteProps) {
     });
   }, [map, directionsData]);
 
-  return <div style={{width: "80vw", height: "100vh"}}ref={mapContainerRef} />;
+  return <div style={{width: "80vw", height: "100vh"}} ref={mapContainerRef} />;
 }
