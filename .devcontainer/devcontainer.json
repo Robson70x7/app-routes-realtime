@@ -1,6 +1,6 @@
 // See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "App FC Roras e Rastreio",
+	"name": "App FC Rotas e Rastreio",
 	"dockerComposeFile": [
 		"./docker-compose.yml"
 	],
