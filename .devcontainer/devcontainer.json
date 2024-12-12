@@ -4,14 +4,14 @@
 	"dockerComposeFile": [
 		"./docker-compose.yml"
 	],
-	"service": "nestapi",
+	"service": "devc-app",
 	"remoteUser": "node",
 	"features": {
 		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
 		"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {}
 	},
 	"shutdownAction": "stopCompose",
-	"workspaceFolder": "/home/node/nestjs-api",
+	"workspaceFolder": "/home/node/app",
 	"forwardPorts": [3000],
 	"customizations": {
 		"vscode": {
@@ -21,7 +21,9 @@
 				"mongodb.mongodb-vscode",
 				"humao.rest-client",
 				"Prisma.prisma",
-				"bradlc.vscode-tailwindcss"
+				"bradlc.vscode-tailwindcss",
+				"golang.go",
+				"Codeium.codeium"
 			]
 		}
 	}

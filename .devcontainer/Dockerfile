@@ -12,5 +12,18 @@ RUN apt-get update && apt-get install -y \
 # Instalar CLI do Nest.js
 RUN npm install -g @nestjs/cli
 
+# Instale o Go 1.23.4
+RUN wget https://go.dev/dl/go1.23.4.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz && \
+    rm go1.23.4.linux-amd64.tar.gz
+
+# Configure variáveis de ambiente para o Go
+ENV PATH="/usr/local/go/bin:${PATH}" \
+    GOPATH="/go" \
+    GOROOT="/usr/local/go"
+
+# Ajustar permissões para o diretório /go
+RUN mkdir -p /go && chown node:node /go
+
 # Configurar variável de ambiente para DevContainer
 ENV DEVCONTAINER=true

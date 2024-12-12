@@ -1,5 +1,5 @@
 services:
-  nestapi:
+  devc-app:
     build:
       context: .
     ports:
@@ -7,7 +7,7 @@ services:
     networks:
       - app_network
     volumes:
-      - ../:/home/node/nestjs-api:cached
+      - ../:/home/node/app:cached
     command: ["tail", "-f", "/dev/null"]
 
   db:
